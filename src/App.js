@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+
 import './App.css';
 import { NavBar } from './components/navbar';
 import { Banner } from './components/banner';
@@ -8,12 +10,15 @@ import { Footer } from './components/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  useEffect(() => {
+    document.title = 'Godwin';
+  }, []);
+
   return (
     <div className="App">
       <NavBar />
       <Banner />
       <Skills />
-      {/* <Projects /> */}
       <Contact />
       <Footer />
     </div>
