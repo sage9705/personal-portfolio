@@ -3,14 +3,25 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-
+const detectPort = require('detect-port');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
-app.listen(5000, () => console.log("Server Running"));
 
+const DEFAULT_PORT = process.env.PORT || 5000;
+
+const startServer = async () => {
+  try {
+    const port = await detectPort(DEFAULT_PORT);
+    app.listen(port, () => console.log(`Server Running on port ${port}`));
+  } catch (err) {
+    console.error('Error finding an available port:', err);
+  }
+};
+
+startServer();
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
