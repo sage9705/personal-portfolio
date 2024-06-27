@@ -5,6 +5,7 @@ import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
+
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -60,7 +61,7 @@ export const Banner = () => {
                   <p>I’m a software engineer with a passion for understanding how computers work. My journey began years ago, and since then, I’ve gained significant experience at Trestle Academy Ghana, INNGEN, and 4th-IR.</p>
                   <p>At Trestle, during the data engineering training program, I honed my skills, working with tools like Apache Spark, Apache Airflow, and AWS services. I designed efficient data pipelines, solidifying my expertise in Big Data technologies and ETL processes.</p>
                   <p>As a Frontend Engineer at INNGEN, I contribute to web development and occasionally dabble in content writing. Recently, I’ve been serving at 4TH-IR, further enriching my frontend development skills and fueling my passion for impactful software solutions.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                  {/* <button>Let’s Connect <ArrowRightCircle size={25} /></button> */}
               </div>}
             </TrackVisibility>
           </Col>
