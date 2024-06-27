@@ -507,16 +507,68 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-repeat: no-repeat;
 }
 
-.footer-social-icon{
-  margin-top: 30px;
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
+
+.footer-social-icon .social-link {
+  margin-left: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+.footer-social-icon .social-link:hover {
+  background-color: rgba(255, 255, 255, 0.5); 
+  transform: scale(1.1); 
+}
+
+.footer-social-icon a .icon {
+  color: #808080 !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-social-icon a:hover .icon {
+  color: #ffffff; 
+}
+
+.footer-social-icon a .tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.footer-social-icon a:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.footer-social-icon a .icon {
+  font-size: 22px;
+}
+
 .footer img {
   width: 26%;
 }
+
 .footer p {
   font-weight: 400;
   font-size: 14px;
-  color: #B8B8B8;
+  color: #b8b8b8;
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
