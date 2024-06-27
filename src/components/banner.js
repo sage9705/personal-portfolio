@@ -57,7 +57,7 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Step into my digital universe</span>
-                <h1>{`Hi there! I'm Godwin `} <h1 className="txt-rotate" dataPeriod="1000" data-rotate='[ "Software Engineer", "Web Developer", "Data Engineer" ]'><span className="wrap">{text}</span></h1></h1>
+                <h1>{`Hi there! I'm Godwin`} <h1 className="txt-rotate" dataPeriod="1000" data-rotate='[ "Software Engineer", "Web Developer", "Data Engineer" ]'><span className="wrap">{text}</span></h1></h1>
                   <p>I’m a software engineer with a passion for understanding how computers work. My journey began years ago, and since then, I’ve gained significant experience at Trestle Academy Ghana, INNGEN, and 4th-IR.</p>
                   <p>At Trestle, during the data engineering training program, I honed my skills, working with tools like Apache Spark, Apache Airflow, and AWS services. I designed efficient data pipelines, solidifying my expertise in Big Data technologies and ETL processes.</p>
                   <p>As a Frontend Engineer at INNGEN, I contribute to web development and occasionally dabble in content writing. Recently, I’ve been serving at 4TH-IR, further enriching my frontend development skills and fueling my passion for impactful software solutions.</p>

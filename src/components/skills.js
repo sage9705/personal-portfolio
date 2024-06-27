@@ -44,10 +44,10 @@ const SkillRing = ({ skill, percentage }) => {
 
 export const Skills = () => {
   const skills = [
-    { name: "Software Engineering", level: 95 },
+    { name: "Software Engineering", level: 50 },
     { name: "Web Development", level: 85 },
-    { name: "Data Engineering", level: 75 },
-    { name: "AI/ML (Basics)", level: 65 }
+    { name: "Data Engineering", level: 55 },
+    { name: "AI/ML (Basics)", level: 15 }
   ];
 
   return (
