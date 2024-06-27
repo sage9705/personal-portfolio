@@ -567,6 +567,62 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 100%;
 }
 
+.contact {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.contact-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.contact-content {
+  padding: 20px;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  color: #fffafa;
+  margin-bottom: 20px;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.contact-button {
+  background-color: #27292b;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #6b7070;
+}
+
+.email-button {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .contact-image {
+    margin-bottom: 30px;
+  }
+  
+  .contact-content {
+    text-align: center;
+  }
+}
+
+
 .footer {
   padding: 0 0 50px 0;
   background-image: url('./assets/img/footer-bg.png');
