@@ -1,63 +1,73 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
-import colorSharp from "../assets/img/color-sharp.png"
+import React from 'react';
+import colorSharp from "../assets/img/color-sharp.png";
+
+const SkillRing = ({ skill, percentage }) => {
+  const radius = 50;
+  const stroke = 10;
+  const normalizedRadius = radius - stroke * 2;
+  const circumference = normalizedRadius * 2 * Math.PI;
+  const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+  return (
+    <div className="skill-ring">
+      <svg height={radius * 2} width={radius * 2}>
+        <circle
+          stroke="#262626"
+          fill="transparent"
+          strokeWidth={stroke}
+          r={normalizedRadius}
+          cx={radius}
+          cy={radius}
+        />
+        <circle
+          stroke="url(#gradient)"
+          fill="transparent"
+          strokeWidth={stroke}
+          strokeDasharray={circumference + ' ' + circumference}
+          style={{ strokeDashoffset }}
+          r={normalizedRadius}
+          cx={radius}
+          cy={radius}
+        />
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#AA367C" />
+            <stop offset="100%" stopColor="#4A2FBD" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div className="percentage">{percentage}%</div>
+      <div className="skill-name">{skill}</div>
+    </div>
+  );
+};
 
 export const Skills = () => {
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
+  const skills = [
+    { name: "Software Engineering", level: 95 },
+    { name: "Web Development", level: 85 },
+    { name: "Data Engineering", level: 75 },
+    { name: "AI/ML (Basics)", level: 65 }
+  ];
 
   return (
     <section className="skill" id="skills">
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-                        <p>Here's my skill level in each domain:</p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={meter1} alt="Software Engineering" />
-                                <h5>Software Engineering</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="Web Development" />
-                                <h5>Web Development</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="Data Engineering" />
-                                <h5>Data Engineering</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="AI/ML Basics" />
-                                <h5>AI/ML (Basics)</h5>
-                            </div>
-                        </Carousel>
-                    </div>
-                </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div className="skill-bx wow zoomIn">
+              <h2>Skills</h2>
+              <p>Here's my skill level in each domain:</p>
+              <div className="skill-rings">
+                {skills.map((skill, index) => (
+                  <SkillRing key={index} skill={skill.name} percentage={skill.level} />
+                ))}
+              </div>
             </div>
+          </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Background Image" />
+      </div>
+      <img className="background-image-left" src={colorSharp} alt="Background Image" />
     </section>
-);
+  );
 }
