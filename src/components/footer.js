@@ -12,9 +12,9 @@ export const Footer = () => {
           </Col>
           <Col xs={12} sm={6} className="text-center text-sm-end">
             <div className="footer-social-icon">
-              <a href="#" className="social-link"><Linkedin size={32} /></a>
-              <a href="#" className="social-link"><Twitter size={32} /></a>
-              <a href="#" className="social-link"><Github size={32} /></a>
+            <a href="https://www.linkedin.com/in/edem-kumahor-1995aa141/" className="social-link"><Linkedin size={24} className="icon" /></a>
+                <a href="https://www.x.com/Sushi__boy__" className="social-link"><Twitter size={24} className="icon"/></a>
+                <a href="https://www.github.com/Sage9705" className="social-link"><Github size={24} className="icon"/></a>
             </div>
             
           </Col>
